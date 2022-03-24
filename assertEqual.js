@@ -24,11 +24,11 @@ const assertEqual = function(actual, expected) {
 };
 
 // TEST CODE:
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1,1));
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual(1,1);
 // Testing scenarios of non-identical values:
-console.log(assertEqual("Weekend", "Weekend"));
-console.log(assertEqual(1,5));
+assertEqual("Weekend", "Weekend");
+assertEqual(1,5);
 
 /* Code Review notes from  mentor Konstantin Toroshchin:
 Suggestion to improve code further: use ternary operator.
