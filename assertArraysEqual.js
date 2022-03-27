@@ -10,12 +10,30 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-/* With this code, the function has two parameters.
+/* UPDATED & RE-SUBMITTED CODE FOR Implement assertArraysEqual asgmt:*/
+const assertArraysEqual = function (actual, expected) {
+  const arrayPass = "✅ Assertion passed. ";
+  const arrayFail = "❌ Assertion failed. ";
+
+  if (eqArrays(actual, expected)) {
+    console.log(arrayPass + actual + " === " + expected);
+  } else {
+    console.log(arrayFail + actual + " !== " + expected);
+  }
+};
+
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
+assertArraysEqual(["1", "2", "3"], ["1", 2, "3"]);
+
+//console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
+
+/* ORIGINALLY SUBMITTED CODE
+With this code, the function has two parameters.
 Therefore, if you pass in a test-code, that test code
 should have two arguments. One will be two arrays being compared.
 The other will be a true/false, which acts as our expected value. */
-
-const assertArraysEqual = function(actual, expected) {
+/* const assertArraysEqual = function(actual, expected) {
   const arrayPass = "✅ Assertion passed.";
   const arrayFail = "❌ Assertion failed.";
   if (actual === expected) {
@@ -32,8 +50,7 @@ assertArraysEqual(true, true);
 assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); /*The second argument value should MATCH
 the expected evaluation of the two arrays after being passed into eqArrays. */
 
-assertArraysEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true);
-
+//assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 
 /* Another possible solution:
 This function has one parameter. Therefore, the test code
