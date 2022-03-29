@@ -10,7 +10,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const assertArraysEqual = function (actual, expected) {
+const assertArraysEqual = function(actual, expected) {
   const arrayPass = "✅ Assertion passed. ";
   const arrayFail = "❌ Assertion failed. ";
 
@@ -27,8 +27,8 @@ const without = function(source, itemsToRemove) {
     for (let j = 0; j < itemsToRemove.length; j++) {
       if (source[i] !== itemsToRemove[j]) {
         newArr.push(source[i]);
+      }
     }
-   }
   }
   return newArr;
 };
