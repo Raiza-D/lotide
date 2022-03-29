@@ -23,24 +23,17 @@
 
 const letterPositions = function(sentence) {
   const results = {};
-  let index = 0;
+  
+  for (const letter of sentence) {
+    let letterIndex = 0;
 
-  for (let i = 0; i < sentence.length; i++) {
-    if (!results[i]) {
-     results[i] = [];
+    if (!results[letter]) {
+      results[letter] = [];
+      // Code to add index here?
     }
+    results[letter].push(letter);
   }
   return results;
 };
 
 console.log(letterPositions("hello"));
-
-
-/*   for (const letter of sentence) {
-    let letterIndex = 0;
-
-    if (!results[letter]) {
-      results[letter] = [];
-    }
-    results[letter].push();
-  }*/
