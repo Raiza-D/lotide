@@ -1,4 +1,4 @@
-/* const eqArrays = function (arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -8,9 +8,9 @@
     }
   }
   return true;
-}; */
+};
 
-/* const assertArraysEqual = function (actual, expected) {
+const assertArraysEqual = function (actual, expected) {
   const arrayPass = "✅ Assertion passed. ";
   const arrayFail = "❌ Assertion failed. ";
 
@@ -19,25 +19,32 @@
   } else {
     console.log(arrayFail + actual + " !== " + expected);
   }
-}; */
+};
 
-const letterPositions = function(sentence) {
+const letterPositions = function (sentence) {
   const results = {};
-  
-  for (let i = 0; i < sentence.length; i++) {
 
-    if (!results[i]) {
-      results[i] = [];
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== " ") {
+      if (!results[sentence[i]]) {
+      results[sentence[i]] = [];
+     }
+     results[sentence[i]].push(i);
     }
-    results[i].push(sentence[i]);
   }
   return results;
 };
 
 console.log(letterPositions("hello"));
+console.log(letterPositions("Vacation time"));
 
+assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions("Vacation time").a, [1, 3]); // Dealing with INDICES where letter appears.
+//assertArraysEqual(letterPositions("Vacation time").v, [undefined]); // Why TypeError?
 /*
-  for (const letter of sentence) {
+  
+
+    for (const letter of sentence) {
     let letterIndex = 0;
 
     if (!results[letter]) {
