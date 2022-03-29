@@ -22,7 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
       }
     }
   }
-  return results;  // Final results objects with all the names and their counts.
+  return results;
 };
 
 const firstNames = [
@@ -38,6 +38,7 @@ const firstNames = [
 ];
 
 const result1 = countOnly(firstNames, {"Jason": true, "Karima": true, "Fang": true, "Agouhanna": false});
+// result1 = results object from countOnly function.
 
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined); // Actual = "undefined". Karima is not saved in results.
