@@ -9,37 +9,41 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKeyByValue = function(object, value) {
-  keyArray = Object.keys(object);
-  //console.log(objKey);
 
-  /*for (const key in object) {  // key represents ONLY the object's key
-    //console.log(key);
-    if (object[key] === value) {
+  for (const key in object) {  // key represents ONLY the object's key. NOT including its value.
+    if (object.key === value) { // Use bracket notation. key is dynamic here (changing w/ each iteration)
       return key;
     }
-  } */
+  }
+  return undefined;
+};
+
+// Tests to ensure findKeyByValue function output correct:
+console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama: "The Wire"
+};
+
+// Examples testing our assertions:
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That 70's Show"), undefined);
+
+/* Method below makes use of Object.keys(). Keys are stored in an array.
+const findKeyByValue = function (object, value) {
+  keyArray = Object.keys(object);
+
   for (const arrElement of keyArray) {
     if (object[arrElement] === value) {
       return arrElement;
     }
   }
   return undefined;
-};
+}; */
 
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama: "The Wire"
-};
-
-//console.log(bestTVShowsByGenre.comedy);
-//console.log(bestTVShowsByGenre[comedy]);
-//console.log(bestTVShowsByGenre["comedy"]);
-
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
-
-// bestTVShowsByGenre.sci_fi;
-// bestTVShowsByGenre["sci_fi"];
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That 70's Show"), undefined);
+/* Test-codes to demonstrate why we cannot use dot notation in Line 14:
+console.log(bestTVShowsByGenre.comedy);
+console.log(bestTVShowsByGenre[comedy]);
+console.log(bestTVShowsByGenre["comedy"]); */
