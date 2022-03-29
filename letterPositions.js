@@ -1,4 +1,4 @@
-const eqArrays = function (arr1, arr2) {
+/* const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -8,9 +8,9 @@ const eqArrays = function (arr1, arr2) {
     }
   }
   return true;
-};
+}; */
 
-const assertArraysEqual = function (actual, expected) {
+/* const assertArraysEqual = function (actual, expected) {
   const arrayPass = "✅ Assertion passed. ";
   const arrayFail = "❌ Assertion failed. ";
 
@@ -19,12 +19,17 @@ const assertArraysEqual = function (actual, expected) {
   } else {
     console.log(arrayFail + actual + " !== " + expected);
   }
-};
+}; */
 
-const letterPositions = function (sentence) {
+const letterPositions = function(sentence) {
   const results = {};
-  // code to update results here
+
+  for (const letter of sentence) {
+    if (!results[letter]) {
+      results[letter] = [];
+    }
+  }
   return results;
 };
 
-assertArraysEqual(letterPositions("hello"), 5);
+console.log(letterPositions("hello"));
