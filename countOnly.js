@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 // Function that takes in collection of items and returns the counts
 // only for specific subset of those items.
 const countOnly = function(allItems, itemsToCount) {
-  let results = {};  // Save the items and their count here
+  const results = {};  // Save the items and their count here
     
   for (const item of allItems) { // Loop through each element in given array.
     if (itemsToCount[item]) {  // If item can be found in itemsToCount object
@@ -44,5 +44,4 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined); // Actual = "undefined". Karima is not saved in results.
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
-assertEqual(result1["Fang"], 3);
 assertEqual(result1["Kavith"], undefined);
