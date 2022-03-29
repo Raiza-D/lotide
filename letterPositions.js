@@ -26,3 +26,5 @@ const letterPositions = function (sentence) {
   // code to update results here
   return results;
 };
+
+assertArraysEqual(letterPositions("hello"), 5);
