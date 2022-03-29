@@ -26,9 +26,9 @@ const flatten = function(oneLevelArr) {
 
   for (let i = 0; i < oneLevelArr.length; i++) {
     if (Array.isArray(oneLevelArr[i])) {
-       for (let j = 0; j < oneLevelArr[i].length; j++) {
-         flatterArr.push(oneLevelArr[i][j]);
-       }
+      for (let j = 0; j < oneLevelArr[i].length; j++) {
+        flatterArr.push(oneLevelArr[i][j]);
+      }
     } else {
       flatterArr.push(oneLevelArr[i]);
     }
