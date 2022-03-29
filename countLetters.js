@@ -30,6 +30,3 @@ const resultsContent = countLetters("Hollywood");
 // Test assertions
 assertEqual(resultsContent["o"], 3);
 assertEqual(resultsContent["h"], 0); // Lowercase "h" does not exist, therefore undefined.
-
-
-
