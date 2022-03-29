@@ -21,7 +21,7 @@ const countLetters = function(sentence) {
   return results;
 };
 
-// Test-codes to make sure correct data saved in results object's key-value pairs.
+// Test-codes to make sure correct data added in results object's key-value pairs.
 // console.log(countLetters("Hollywood"));
 // console.log(countLetters("Mountain"));
 
