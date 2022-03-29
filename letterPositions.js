@@ -32,7 +32,8 @@ const letterPositions = function (sentence) {
      results[sentence[i]].push(i);
     }
   }
-  return results;
+  // for Each loop. plus split method
+  // and for...of starts from BEGINNING to END of array.  one method vs another. And why? Tradeoffs.
 };
 
 console.log(letterPositions("hello"));
@@ -41,16 +42,22 @@ console.log(letterPositions("Vacation time"));
 assertArraysEqual(letterPositions("hello")["e"], [1]);
 assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]); // Dealing with INDICES where letter appears.
 //assertArraysEqual(letterPositions("Vacation time").v, [undefined]); // Why TypeError?
-/*
-  
 
-    for (const letter of sentence) {
-    let letterIndex = 0;
+/* If using the for..of loop, this is what it would look like.
+const letterPositions = function (sentence) {
+  const results = {};
+  let letterIndex = -1;
 
-    if (!results[letter]) {
-      results[letter] = [];
-      // Code to add index here?
+  for (const letter of sentence) {
+    // Each iteration, increase value of letterIndex. So first one, value is now 0.
+    // The zero represents INDEX of letter.
+    letterIndex++;
+    if (letter !== " ") {
+      if (!results[letter]) {
+        results[letter] = [];
+      }
+      results[letter].push(letterIndex); // Push value of element's INDEX.
     }
-    results[letter].push(letter);
   }
-*/
+  return results;
+}; */
