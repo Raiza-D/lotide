@@ -25,11 +25,11 @@ const letterPositions = function(sentence) {
   const results = {};
 
   for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] !== " ") { // Check if the element is a string. Ignore strings!!
+    if (sentence[i] !== " ") { // Check if the character is a space. Ignore spaces!!
       if (!results[sentence[i]]) {
-      results[sentence[i]] = [];
-     }
-     results[sentence[i]].push(i);
+        results[sentence[i]] = [];
+      }
+      results[sentence[i]].push(i);
     }
   }
   return results;
@@ -37,12 +37,9 @@ const letterPositions = function(sentence) {
 
 // Test-codes to make sure output for letterPositions correct:
 console.log(letterPositions("hello"));
-console.log(letterPositions("Vacation time"));
+console.log(letterPositions("Vacation time")); // Has a space
 
 // Codes to test assertions:
 assertArraysEqual(letterPositions("hello")["e"], [1]); // Dot notation: ...("hello").e, ...
-assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]); // Dealing with INDICES where letter appears.
-assertArraysEqual(letterPositions("Vacation time").v, [undefined]);
-// Why TypeError? Answer: No v being passed in, therefore, does not exist in results object.
-// There is NO array being passed in into arr1 first argument in eqArrays.
-// Cannot compare the length of 'undefined' value.
+assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]);
+// Reminder: [1, 3] expected values deals with INDICES where letter appears.
