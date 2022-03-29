@@ -25,9 +25,11 @@ const letterPositions = function(sentence) {
   const results = {};
 
   for (const letter of sentence) {
+
     if (!results[letter]) {
       results[letter] = [];
     }
+    results[letter].push(letter);
   }
   return results;
 };
