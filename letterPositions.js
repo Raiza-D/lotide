@@ -38,8 +38,8 @@ const letterPositions = function (sentence) {
 console.log(letterPositions("hello"));
 console.log(letterPositions("Vacation time"));
 
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("Vacation time").a, [1, 3]); // Dealing with INDICES where letter appears.
+assertArraysEqual(letterPositions("hello")["e"], [1]);
+assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]); // Dealing with INDICES where letter appears.
 //assertArraysEqual(letterPositions("Vacation time").v, [undefined]); // Why TypeError?
 /*
   
