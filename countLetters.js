@@ -10,14 +10,14 @@
 }; */
 
 const countLetters = function(sentence) {
-  let letterCount = "";
+  let letterCount;
 
   for (let i = 0; i < sentence.length; i++) {
-   if (sentence[i]) {
-     if (letterCount[i]) {
-       letterCount++;
+   if (sentence) {
+     if (letterCount) {
+       letterCount += 1;
      } else {
-       letterCount[i] = 1;
+       letterCount = 1;
      }
    }
   }
