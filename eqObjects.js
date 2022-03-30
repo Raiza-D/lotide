@@ -13,15 +13,15 @@ const eqObjects = function(object1, object2) {
   arrKeyObj1 = Object.keys(object1);
   arrKeyObj2 = Object.keys(object2);
 
-  if (arrKeyObj1.length !== arrKeyObj2) {
-    return false;
+  if (arrKeyObj1.length === arrKeyObj2) {
+    return true;
   }
   for (const key of arrKeyObj1) {
-    if (object1[key] !== object2[key]) {
-      return false;
+    if (object1[key] === object2[key]) {
+      return true
     }
   }
-  return true;
+  return false;
 };
 
 /*
