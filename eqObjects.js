@@ -14,7 +14,12 @@ const eqObjects = function(object1, object2) {
   objTwoKeyLength = Object.keys(object2);
 
   if (objOneKeyLength.length === objTwoKeyLength.length) {
-    for (const key in object1) {
+    for (const key of objOneKeyLength) {
+      if (object1[key] === object2[key]) {
+        return true;
+      }
+    }
+    /* for (const key in object1) {
       for (const key2 in object2) {
         if (key === key2) {
           if (object1[key] === object2[key]) {
@@ -22,7 +27,7 @@ const eqObjects = function(object1, object2) {
           }
         }
       }
-    }
+    } */
   }
   return false;
 };
