@@ -36,31 +36,4 @@ console.log(eqObjects(ab, abc)); // false
 
 assertEqual(eqObjects(ab, ba), true);
 assertEqual(eqObjects(ab, abc), false);
-
-  /*arrKeyObj1 = Object.keys(object1);
-  arrKeyObj2 = Object.keys(object2);
-
-  if (arrKeyObj1.length !== arrKeyObj2) {
-    return false;
-  }
-  for (const key of arrKeyObj1) {
-    if (object1[key] === object2[key]) {
-      return true
-    }
-  }
-  return false; */
-
-/*
-Use Object.keys to grab keys contained in each object.
-If both of objects DO NOT have the same number of keys (length), return false. Otherwise proceed.
-
-LOOP through each key of ONE object so you can compare it w/ the other object.
-
-Take the first key in one object and compare it with the FIRST key in the OTHER object (object2).
-If they're NOT the same, return false. Otherwise, proceed.
-Take the VALUE of the first object's first key and compare it with the first value of the
-OTHER object's first key.
-If they're NOT the same, return false. Otherwise, proceed.
-
-Return true if everything is matching.
-*/
+assertEqual(eqObjects(abc, ba), false);
