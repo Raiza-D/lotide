@@ -12,25 +12,19 @@ const assertEqual = function(actual, expected) {
 const eqObjects = function(object1, object2) {
   objOneKeyLength = Object.keys(object1);
   objTwoKeyLength = Object.keys(object2);
-
-  if (objOneKeyLength.length === objTwoKeyLength.length) {
+// Alternative way of writing the code logic.
+// Less lines of code. No nested for's and if's.
+  if (objOneKeyLength.length !== objTwoKeyLength.length) {
+    return false;
+    }
     for (const key of objOneKeyLength) {
-      if (object1[key] === object2[key]) {
-        return true;
+      if (object1[key] !== object2[key]) { //How does it know to look at at the same key within object2?
+        // Since we're looping throught the ARRAY ELEMENTS of objOneKeyLength?
+        return false;
       }
     }
-    /* for (const key in object1) {
-      for (const key2 in object2) {
-        if (key === key2) {
-          if (object1[key] === object2[key]) {
-            return true;
-          }
-        }
-      }
-    } */
-  }
-  return false;
-};
+    return true;
+  };
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
@@ -42,3 +36,21 @@ console.log(eqObjects(ab, abc)); // false
 assertEqual(eqObjects(ab, ba), true);
 assertEqual(eqObjects(ab, abc), false);
 assertEqual(eqObjects(abc, ba), false);
+
+  /*objOneKeyLength = Object.keys(object1);
+  objTwoKeyLength = Object.keys(object2);
+
+  if (objOneKeyLength.length === objTwoKeyLength.length) {
+
+    }
+    for (const key in object1) {
+      for (const key2 in object2) {
+        if (key === key2) {
+          if (object1[key] === object2[key]) {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  return false; */
