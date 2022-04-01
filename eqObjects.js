@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // eqArrays function to compare TWO arrays:
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -43,8 +43,8 @@ const eqObjects = function(object1, object2) {
     // If the first IF statement within loop false, then run this ELSE IF.
     } else if (object1[key] !== object2[key]) {
       return false;
-      }
     }
+  }
   // If two main IF statements above are met, then return true.
   return true;
 };
