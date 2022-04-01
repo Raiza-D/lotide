@@ -3,7 +3,7 @@ If this function not included, any assertion tests calling on assertObjectsEQual
 result in a Reference Error. eqObjects reference eqArrays that's why.*/
 
 // Compares two arrays by comparing its length then comparing each value
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -16,7 +16,7 @@ const eqArrays = function (arr1, arr2) {
 };
 
 // eqObjects compares two objects, their keys, and values. Return true if identical.
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   let objOneKeys = Object.keys(object1);
   let objTwoKeys = Object.keys(object2);
 
@@ -38,7 +38,7 @@ const eqObjects = function (object1, object2) {
 /*Function that will take in two objects and log an appropriate message.
 Objects will be compared if they are identical (making use of eqObjects function) and return true/false.
 That actual value will be compared with our expected value. Then appropriate message will be printed.*/
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const inspect = require("util").inspect;
 
   const objectPass = "✅✅✅ Assertion passed for objects: ";
