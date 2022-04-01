@@ -50,6 +50,7 @@ but the values for each are different, this is what will happen.
 In the for..in loop, JavaScript will override the value of the first genre instance
 with value of the second genre's instance. E.g. "The Wire" will get overwritten by
 "Bridgerton" when JS reaches the second instance of drama. Use assertEqual to test this.
+I would not have known the above. This advanced topic/developer territory.
 
 const findKeyByValue = function(object, value) {
   
