@@ -41,7 +41,7 @@ const results1 = map(words, word => word[0]);
 const results2 = map(numbers, (num) => num + 2);
 
 console.log(results1); // To make sure results1 output is accurately.
-console.log(results2); // To make sures results2 output is accurately.
+console.log(results2); // To make sure results2 output is accurately.
 
 assertArraysEqual(results1, ["g", "c", "t", "m", "t"]); // Pass
 assertArraysEqual(results2, [3, 4, 5, 6, 7]); // Pass
