@@ -1,4 +1,4 @@
-// assertEqual function to compare Boolean values true/false
+// assertEqual function to compare Boolean values true/false.
 // Compares actual result against what we expect the result to be.
 const assertEqual = function(actual, expected) {
   const pass = "✅✅✅ Assertion Passed: ";
@@ -23,39 +23,31 @@ const eqArrays = function (arr1, arr2) {
   return true;
 };
 
-// Return true if both objects have the same keys and each key have the same values.
+// eqObjects compares two objects, their keys, and values. Return true if identical.
 const eqObjects = function(object1, object2) {
-  let objOneKeys = Object.keys(object1);
+  let objOneKeys = Object.keys(object1); // Variable to store object's KEYS. Doesn't keys' values.
   let objTwoKeys = Object.keys(object2);
   
-  if (objOneKeys.length !== objTwoKeys.length) {
+  if (objOneKeys.length !== objTwoKeys.length) { // Check number of keys. If not same, don't continue.
     return false;
   }
   for (const key of objOneKeys) {  // Loops through each item in objOneKeys array
-    // Compare if key referenced in iteration is an array in both given objects
+    // Takes key referenced in iteration, references them in both given objects,
+    // then checks if they're an array in both objects passed in. If yes, proceed.
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      if (!eqArrays(object1[key], object2[key])) { // Compares each element within both arrays
+      // Compares each element within both arrays.
+      // If NOT the same, return false and codes below won't run.
+      if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
+    // If the first IF statement within loop false, then run this ELSE IF.
     } else if (object1[key] !== object2[key]) {
       return false;
       }
     }
+  // If two main IF statements above are met, then return true.
   return true;
 };
-
-
-/*
-My questions:
-1. How does it know to look at the same key within object2? Line comparing
-the key values of object1 and object2? Since we're looping through the ARRAY ELEMENTS of objOneKeyLength.
-
-2. I dont understand CORRECT ANSWER in Compass.
-
-3. Code review for my original code logic.
-Where would eqArrays be implemented?
-
-*/
 
 /*
 // Tests to make sure output for eqObjects correct, using primitive values:
@@ -85,17 +77,19 @@ assertEqual(eqObjects(cd, dc), true);
 assertEqual(eqObjects(cd, cd2), false);
 
 
-// My earlier solution
-// It compares key first, then values second.
-  objOneKeys = Object.keys(object1);
-  objTwoKeys = Object.keys(object2);
+/* My earlier solution. Reviewed by mentor. Code not efficient.
+You're looping through the number of keys in object1 multiplied by number of keys in object2.
+Check falsey values first. Checking truthy values will result in nested for loops,
+amongst other reasons. Much better to exist code as soon as possible.*/
+/*const eqObjects = function(object1, object2) {
+objOneKeys = Object.keys(object1);
+objTwoKeys = Object.keys(object2);
 
   if (objOneKeyLength.length === objTwoKeyLength.length) {
-    for (const key in object1) {  // Check falsey values first. Truthy will result in nested for loops,
-      // amongst other reasons. Exit code as soon as possible.
-      for (const key2 in object2) {
-        if (key === key2) {
-          if (object1[key] === object2[key]) {
+    for (const key in object1) { // Loop through object1's key
+      for (const key2 in object2) { // Loop through object2's key
+        if (key === key2) { // Compare if both keys are the same
+          if (object1[key] === object2[key]) { // Compare the values of the key in current iteration
             return true;
           }
         }
@@ -103,27 +97,11 @@ assertEqual(eqObjects(cd, cd2), false);
     }
   }
   return false;
-};
+};*/
 
-  /*
-  const eqObjects = function(object1, object2) {
-  objOneKeyLength = Object.keys(object1);
-  objTwoKeyLength = Object.keys(object2);
+/* Additional notes from mentor session:
+Just because a code has less lines, doesn't mean it's better.
+Code still has to be readable. Readability, functionality (efficiency), pretty factor.
+Comparing any two arrays, no matter if identical, will always result in false.
+They're two completely separate arrays. They don't have the same reference point.*/
 
-// Alternative way of writing the code logic.
-// Less lines of code. No nested for's and if's.
-  if (objOneKeyLength.length !== objTwoKeyLength.length) {
-    return false;
-    }
-    for (const key of objOneKeyLength) {
-      if (object1[key].isArray && object2[key].isArray) {
-       eqArrays(object1[key], object2[key]);
-        if (object1[key] !== object2[key]) { //How does it know to look at at the same key within object2?
-        // Since we're looping throught the ARRAY ELEMENTS of objOneKeyLength?
-        return false;
-      }
-    }
-  }
-  return true;
-  };
-  */
