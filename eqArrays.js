@@ -8,6 +8,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// Compares two arrays by comparing its length then comparing each value
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
