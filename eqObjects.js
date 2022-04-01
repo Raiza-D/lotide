@@ -103,5 +103,6 @@ objTwoKeys = Object.keys(object2);
 Just because a code has less lines, doesn't mean it's better.
 Code still has to be readable. Readability, functionality (efficiency), pretty factor.
 Comparing any two arrays, no matter if identical, will always result in false.
-They're two completely separate arrays. They don't have the same reference point.*/
+They're two completely separate arrays. They don't have the same reference point.
+"Array.isArray" is the entire name for this method.*/
 
