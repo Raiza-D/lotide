@@ -27,6 +27,7 @@ const assertArraysEqual = function(actual, expected) {
 // Definition and implementation of our own version of map method
 const words = ["ground", "control", "to", "major", "tom"];
 const numbers = [1, 2, 3, 4, 5];
+const mountains = ["Everest", "Waddington", "Denali", "Annapurna"];
 
 const map = function(array, callback) {
   const results = [];
@@ -38,14 +39,19 @@ const map = function(array, callback) {
 };
 
 const results1 = map(words, word => word[0]);
-const results2 = map(numbers, (num) => num + 2);
+const results2 = map(numbers, num => num + 2);
+const results3 = map(mountains, mtn => mtn.length);
+
 
 console.log(results1); // To make sure results1 output is accurately.
 console.log(results2); // To make sure results2 output is accurately.
+console.log(results3);
 
 assertArraysEqual(results1, ["g", "c", "t", "m", "t"]); // Pass
 assertArraysEqual(results2, [3, 4, 5, 6, 7]); // Pass
-
+assertArraysEqual(results3, [7, 10, 6, 9]); // Pass
+// resultsx is the first argument, which is an array. It's a new array that comes from running
+// the map function. The returned new array is stored in resultsx variable.
 
 /* The long way write out the map callback function WITHOUT the use of arrow functions:
 const results1 = map(words,function(word) {
@@ -55,8 +61,11 @@ words is the array being passed into map function as the first argument.
 The second argument is the unnamed function (which is a callback). This callback function will
 execute specified task on each element of the array being passed in.
 
-Mentor advice: PRACTICE ARROW FUNCTIONS and GET USED TO THEM!!
-You will see them a lot more later on.
+Mentor advice:
+1. PRACTICE ARROW FUNCTIONS and GET USED TO THEM!!
+   You will see them a lot more later on.
+
+2. Learn and USE your keyboard shortcuts for VSCode. These will be VERY useful later.
 
 Mentor provided another way to write syntax for arrow functions used in results1 variable.
 Reminder results1 is a variable containing the results returned from running map function.
