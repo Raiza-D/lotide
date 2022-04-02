@@ -8,8 +8,16 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKey = function() {
-
+/* findKey function takes two parameters: an object and a callback
+Function will scan the object and return the first key for
+which callback returns a truthy value. If no key is found, return "undefined". */
+const findKey = function(object, callback) {
+  for (const key in object) {
+    if (object[key] !== true) {
+      return false;
+    }
+  }
+  return callback(value);
 };
 
 findKey({
