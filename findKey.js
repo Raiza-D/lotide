@@ -1,3 +1,5 @@
+/* assertEqual will take two arguments: actual result, expected
+Actual result from running findKey func. Expected is our expected outcome. */
 const assertEqual = function(actual, expected) {
   const pass = "✅✅✅ Assertion Passed: ";
   const fail = "🛑🛑🛑 Assertion Failed: ";
@@ -20,14 +22,22 @@ const findKey = function(object, callback) {
   return undefined;
 };
 
-
-const results = findKey({
+console.log(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2); // => "noma"
+}, x => x.stars === 2)); // => "noma"
 
-assertEqual(results, "noma");
+console.log(findKey({
+  London: { rating: 9 },
+  Paris: { rating: 8 },
+  Vancouver: { rating: 10 },
+  Berlin: { rating: 7 },
+  Brighton: { rating: 8 },
+}, x => x.rating === 9));
+
+//assertEqual(results, "noma");
+//assertEqual(secondResults, "London");
