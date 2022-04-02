@@ -22,22 +22,38 @@ const findKey = function(object, callback) {
   return undefined;
 };
 
-console.log(findKey({
+/* Store result from running findKey function. So can be used as an
+argument when using assertEqual function. Result will be key name. */
+const resultsOne = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2)); // => "noma"
+}, x => x.stars === 2); // => "noma". Wrap this in a console.log to make sure result correct.
 
-console.log(findKey({
-  London: { rating: 9 },
-  Paris: { rating: 8 },
-  Vancouver: { rating: 10 },
-  Berlin: { rating: 7 },
-  Brighton: { rating: 8 },
-}, x => x.rating === 9));
+/*Store result from running findKey function. So can be used as an
+argument when using assertEqual function. Result will be key name. */
+const resultsTwo = findKey({
+    London: { rating: 9 },
+    Paris: { rating: 8 },
+    Vancouver: { rating: 10 },
+    Berlin: { rating: 7 },
+    Brighton: { rating: 8 },
+  },
+  x => x.rating === 9
+); // => London. Wrap this in a console.log to make sure result correct.
 
-//assertEqual(results, "noma");
-//assertEqual(secondResults, "London");
+const resultsThree = findKey({
+    Frosty: { level: "Novice" },
+    Everest: { level: "Expert" },
+    Rainier: { level: "Intermediate" },
+    Denali: { level: "Expert" }
+  },
+  x => x.level === "Easy" // Will return undefined. No key found that has value of "Easy"
+); // => Everest
+
+assertEqual(resultsOne, "noma");
+assertEqual(resultsTwo, "London");
+assertEqual(resultsThree, "Everest");
