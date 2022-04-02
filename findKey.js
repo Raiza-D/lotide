@@ -15,7 +15,7 @@ Function will scan the object and return the first key for
 which callback returns a truthy value. If no key is found, return "undefined". */
 const findKey = function(object, callback) {
   for (const key in object) {
-    if (callback(object[key]) === true) {
+    if (callback(object[key])) {
       return key;
     }
   }
@@ -56,4 +56,4 @@ const resultsThree = findKey({
 
 assertEqual(resultsOne, "noma");
 assertEqual(resultsTwo, "London");
-assertEqual(resultsThree, "Everest");
+assertEqual(resultsThree, undefined);
