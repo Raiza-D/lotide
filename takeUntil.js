@@ -33,8 +33,8 @@ const takeUntil = function(array, callback) {
   for (let item of array) {  // For..of loop to iterate over each element in given array
     if (callback(item) === true) {  // As long as item in current iteration and later
       // fed into callback func (which runs specified task) evaluates to true, then BREAK out of loop.
-     break;
-     }
+      break;
+    }
     resultsArr.push(item); // Push all the items evaluated to true in the new array
   }
   return resultsArr; // Return new array with our results
@@ -63,6 +63,6 @@ const results2 = takeUntil(data2, x => x === ",");
 console.log(results2);
 
 // Testing our assertions
-assertArraysEqual(results1, [1, 2, 5, 7, 2]); 
-assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
+assertArraysEqual(results1, [1, 2, 5, 7, 2]);
+assertArraysEqual(results2, ["I've", "been", "to"]);
 // resultsx contains array of results from running takeUntil func
