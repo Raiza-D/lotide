@@ -64,5 +64,5 @@ console.log(results2);
 
 // Testing our assertions
 assertArraysEqual(results1, [1, 2, 5, 7, 2]);
-assertArraysEqual(results2, ["I've", "been", "to"]);
+assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
 // resultsx contains array of results from running takeUntil func
