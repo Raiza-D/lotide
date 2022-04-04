@@ -31,7 +31,7 @@ const takeUntil = function(array, callback) {
   let resultsArr = [];  // Empty array to store each element in iteration that meets IF condition
 
   for (let item of array) {  // For..of loop to iterate over each element in given array
-    if (callback(item) === true) {  // As long as item in current iteration and later
+    if (callback(item)) {  // As long as item in current iteration and later
       // fed into callback func (which runs specified task) evaluates to true, then BREAK out of loop.
       break;
     }
