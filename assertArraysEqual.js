@@ -10,7 +10,6 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-/* UPDATED & RE-SUBMITTED CODE FOR Implement assertArraysEqual asgmt:*/
 const assertArraysEqual = function(actual, expected) {
   const arrayPass = "✅ Assertion passed. ";
   const arrayFail = "❌ Assertion failed. ";
@@ -25,5 +24,3 @@ const assertArraysEqual = function(actual, expected) {
 assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
 assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
 assertArraysEqual(["1", "2", "3"], ["1", 2, "3"]);
-
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), (true), true);
