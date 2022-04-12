@@ -26,4 +26,4 @@ assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
 assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
 assertArraysEqual(["1", "2", "3"], ["1", 2, "3"]);
 
-// console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), (true), true);
