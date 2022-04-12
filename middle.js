@@ -1,5 +1,6 @@
-
-
+/* middle function returns the middle elements of given array.
+If array length is even, two items middle of array returned.
+If array length is odd, middle item returned. */
 const middle = function(array) {
   let middleArr = [];
 
@@ -18,12 +19,5 @@ const middle = function(array) {
   return middleArr;
 };
 
-// Test-cases:
-console.log(middle([1, 2])); // Should return an empty array
-console.log(middle([1, 2, 3])); // Should return the middle element of 2
-console.log(middle([1, 2, 3, 4])); // Should return the two middle elements of 2 & 3
-
-//Test-assertion:
-assertArraysEqual(middle([1, 2, 3]), [2]);
 
 module.exports = middle;
