@@ -1,14 +1,5 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqArrays = require("./eqArrays");
+
 
 const assertArraysEqual = function(actual, expected) {
   const arrayPass = "✅ Assertion passed. ";
@@ -46,3 +37,5 @@ console.log(middle([1, 2, 3, 4])); // Should return the two middle elements of 2
 
 //Test-assertion:
 assertArraysEqual(middle([1, 2, 3]), [2]);
+
+module.exports = middle;
