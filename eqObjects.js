@@ -49,6 +49,8 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+module.exports = eqObjects;
+
 /*
 // Tests to make sure output for eqObjects correct, using primitive values:
 const ab = { a: "1", b: "2" };
@@ -65,16 +67,16 @@ assertEqual(eqObjects(abc, ba), false); */
 
 
 // Tests for eqObjects output, using array values:
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc)); // true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// console.log(eqObjects(cd, dc)); // true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2)); // false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// console.log(eqObjects(cd, cd2)); // false
 
 // Assertion tests for array values:
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
+// assertEqual(eqObjects(cd, dc), true);
+// assertEqual(eqObjects(cd, cd2), false);
 
 
 /* My earlier solution. Reviewed by mentor. Code not efficient.
