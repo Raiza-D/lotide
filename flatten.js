@@ -36,5 +36,7 @@ const flatten = function(oneLevelArr) {
   return flatterArr;
 };
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten([1, 2, [-9, 10], 5, [-7]]), [1, 2, -9, 10, 5, -7]);
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([1, 2, [-9, 10], 5, [-7]]), [1, 2, -9, 10, 5, -7]);
+
+module.exports = flatten;
