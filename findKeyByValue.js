@@ -20,19 +20,21 @@ const findKeyByValue = function(object, value) {
   return undefined;
 };
 
-const bestTVShowsByGenre = {
-  sciFi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama: "The Wire",
-  horror: "Haunted",
-};
+// const bestTVShowsByGenre = {
+//   sciFi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama: "The Wire",
+//   horror: "Haunted",
+// };
 
 // Tests to ensure findKeyByValue function output accurate:
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+// console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
 
 // Examples testing our assertions:
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That 70's Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That 70's Show"), undefined);
+
+module.exports = findKeyByValue;
 
 
 /* Test-scenario I thought of: What if your object contains two instances of the same key,
