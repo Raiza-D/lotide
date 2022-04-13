@@ -55,9 +55,13 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-assertObjectsEqual({ a: "1", b: "2" }, { b: "2", a: "1" }, true);
-assertObjectsEqual({ a: "1", b: [1, 2, "3"]}, { b: [1, 2, "3"], a: "1" }, true);
-assertObjectsEqual({a: 1, b: 2}, {a: 1, b: 3}, false);
+module.exports = assertObjectsEqual;
+
+// Test Codes:
+// assertObjectsEqual({ a: "1", b: "2" }, { b: "2", a: "1" }, true);
+// assertObjectsEqual({ a: "1", b: [1, 2, "3"]}, { b: [1, 2, "3"], a: "1" }, true);
+// assertObjectsEqual({a: 1, b: 2}, {a: 1, b: 3}, false);
+
 
 /* Questions and Answers from mentor session:
 1. Why is it when using console.log in front of assertObjectsEqual,
