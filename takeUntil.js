@@ -40,29 +40,31 @@ const takeUntil = function(array, callback) {
   return resultsArr; // Return new array with our results
 };
 
-// Test-scenario:
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0); // Store results from takeUntil into this variable
-console.log(results1);
+module.exports = takeUntil;
 
-console.log("---");
+// Test-scenario:
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0); // Store results from takeUntil into this variable
+// console.log(results1);
+
+// console.log("---");
 
 // Test-scenario
-const data2 = [
-  "I've",
-  "been",
-  "to",
-  "Hollywood",
-  ",",
-  "I've",
-  "been",
-  "to",
-  "Redwood",
-];
-const results2 = takeUntil(data2, x => x === ",");
-console.log(results2);
+// const data2 = [
+//   "I've",
+//   "been",
+//   "to",
+//   "Hollywood",
+//   ",",
+//   "I've",
+//   "been",
+//   "to",
+//   "Redwood",
+// ];
+// const results2 = takeUntil(data2, x => x === ",");
+// console.log(results2);
 
 // Testing our assertions
-assertArraysEqual(results1, [1, 2, 5, 7, 2]);
-assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
+// assertArraysEqual(results1, [1, 2, 5, 7, 2]);
+// assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]);
 // resultsx contains array of results from running takeUntil func
