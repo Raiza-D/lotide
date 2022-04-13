@@ -13,16 +13,16 @@ const findKeyByValue = require("./findKeyByValue");
 
 
 module.exports = {
-  head: head,
-  tail: tail,
-  middle: middle,
-  takeUntil: takeUntil,
-  without: without,
-  flatten: flatten,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  letterPositions: letterPositions,
-  map: map,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue
+  head,
+  tail,
+  middle,
+  takeUntil,
+  without,
+  flatten,
+  countLetters,
+  countOnly,
+  letterPositions,
+  map,
+  findKey,
+  findKeyByValue
 };
