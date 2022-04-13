@@ -25,9 +25,9 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 // Definition and implementation of our own version of map method
-const words = ["ground", "control", "to", "major", "tom"];
-const numbers = [1, 2, 3, 4, 5];
-const mountains = ["Everest", "Waddington", "Denali", "Annapurna"];
+// const words = ["ground", "control", "to", "major", "tom"];
+// const numbers = [1, 2, 3, 4, 5];
+// const mountains = ["Everest", "Waddington", "Denali", "Annapurna"];
 
 const map = function(array, callback) {
   const results = [];
@@ -38,18 +38,21 @@ const map = function(array, callback) {
   return results;
 };
 
-const results1 = map(words, word => word[0]);
-const results2 = map(numbers, num => num + 2);
-const results3 = map(mountains, mtn => mtn.length);
+module.exports = map;
+
+// const results1 = map(words, word => word[0]);
+// const results2 = map(numbers, num => num + 2);
+// const results3 = map(mountains, mtn => mtn.length);
 
 
-console.log(results1); // To make sure results1 output is accurately.
-console.log(results2); // To make sure results2 output is accurately.
-console.log(results3);
+// console.log(results1); // To make sure results1 output is accurately.
+// console.log(results2); // To make sure results2 output is accurately.
+// console.log(results3);
 
-assertArraysEqual(results1, ["g", "c", "t", "m", "t"]); // Pass
-assertArraysEqual(results2, [3, 4, 5, 6, 7]); // Pass
-assertArraysEqual(results3, [7, 10, 6, 9]); // Pass
+// assertArraysEqual(results1, ["g", "c", "t", "m", "t"]); // Pass
+// assertArraysEqual(results2, [3, 4, 5, 6, 7]); // Pass
+// assertArraysEqual(results3, [7, 10, 6, 9]); // Pass
+
 // resultsx is the first argument, which is an array. It's a new array that comes from running
 // the map function. The returned new array is stored in resultsx variable.
 
