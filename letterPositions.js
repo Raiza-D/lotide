@@ -36,10 +36,12 @@ const letterPositions = function(sentence) {
 };
 
 // Test-codes to make sure output for letterPositions correct:
-console.log(letterPositions("hello"));
-console.log(letterPositions("Vacation time")); // Has a space
+// console.log(letterPositions("hello"));
+// console.log(letterPositions("Vacation time")); // Has a space
 
 // Codes to test assertions:
-assertArraysEqual(letterPositions("hello")["e"], [1]); // Dot notation: ...("hello").e, ...
-assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]);
+// assertArraysEqual(letterPositions("hello")["e"], [1]); // Dot notation: ...("hello").e, ...
+// assertArraysEqual(letterPositions("Vacation time")["a"], [1, 3]);
 // Reminder: [1, 3] expected values deals with INDICES where letter appears.
+
+module.exports = letterPositions;
