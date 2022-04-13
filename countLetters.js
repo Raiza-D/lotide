@@ -25,8 +25,10 @@ const countLetters = function(sentence) {
 // console.log(countLetters("Hollywood"));
 // console.log(countLetters("Mountain"));
 
-const resultsContent = countLetters("Hollywood");
+// const resultsContent = countLetters("Hollywood");
 
 // Test assertions
-assertEqual(resultsContent["o"], 3);
-assertEqual(resultsContent["h"], 0); // Lowercase "h" does not exist, therefore undefined.
+// assertEqual(resultsContent["o"], 3);
+// assertEqual(resultsContent["h"], 0); // Lowercase "h" does not exist, therefore undefined.
+
+module.exports = countLetters;
