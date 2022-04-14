@@ -33,13 +33,13 @@ The following functions are currently implemented:
 * `without(source, itemsToRemove)`: Takes in two parameters: array & items to remove. Iterates over given array and removes items specified.
 * `flatten(oneLevelArray)`: Takes in one parameter: a one-level array. Will return a flattened version of the array. 
 * `countLetters(sentence)`: Takes in one parameter (should be a string). Returns a count of the letters in provided string.
-* `countOnly(...)`: 
-* `letterPositions(...)`: 
-* `map(...)`: 
-* `findKey(...)`: 
-* `findKeyByValue(...)`: 
-* `assertArraysEqual(...)`: 
-* `assertEqual(...)`: 
-* `assertObjectsEqual(...)`: 
-* `eqArrays(...)`: 
-* `eqObjects(...)`: 
+* `countOnly(allItems, itemsToCount)`: Takes in a collection of items and return counts for a specific subject of those items specified. Takes in two parameters - an object to search through and another object containing specific items to count. 
+* `letterPositions(sentence)`:  Takes in one parameter such as a string. Returns all the indices (with zero-based positions) within the given parameter where each character is found.
+* `map(array, callback)`: A version of the map() array helper method. Takes in an array and callback function. Executes the task specified within the callback function on the provided array and returns a new array with the results.
+* `findKey(object, callback)`: Will scan the object passed in and return the first key for which the callback returns a truthy value. If no key is found, returns "undefined". 
+* `findKeyByValue(object, value)`: Scans the object and returns the first key containing the value specified as the second parameter.
+* `assertArraysEqual(actual, expected)`: Makes use of eqArrays function. Tests to see if our assertions when comparing two arrays are equal. Takes in two parameters - the actual result and expected result.
+* `assertEqual(actual, expected)`: Takes in a value and compares it to our expected value. 
+* `assertObjectsEqual(actual, expected)`: Makes use of eqObjects function. Tests to see if our assertions comparing two objects are equal. Takes in two parameters - the actual result which is a true/false value and our expected result (either a true/false value).
+* `eqArrays(arr1, arr2)`: Compares two arrays if they are identical. 
+* `eqObjects(obj1, obj2)`: Compares two objects (their keys and values) if they are identical. 
